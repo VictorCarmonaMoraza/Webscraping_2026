@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import pandas as pd
+import openpyxl
 
 # URLs de jugadores
 url_jugadores = {
@@ -92,3 +93,8 @@ for jugador, url in url_jugadores.items():
 
 # 📊 Creamos el DataFrame al final
 df = create_data_frame()
+
+#exportar datframe a excel
+df.to_excel("jugadores_valor_mercado.xlsx", index=False)
+
+
